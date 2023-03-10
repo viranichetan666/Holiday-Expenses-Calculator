@@ -1,0 +1,20 @@
+{
+  "name": "holiday-expenses-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "(cd frontend && npm start) & (cd backend && npm start)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viranichetan666/Holiday-Expenses-Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viranichetan666/Holiday-Expenses-Calculator/issues"
+  },
+  "homepage": "https://github.com/viranichetan666/Holiday-Expenses-Calculator#readme"
+}
