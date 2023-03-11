@@ -1,10 +1,10 @@
-import { PayoutsResponse, UserExpense } from './payouts.interface';
+import { SettleUpType, UserExpenseType } from './payouts.interface';
 import {
   combineDuplicateExpense,
   ownsAmountByUserWhoPaidLessAmountToUserWhoPaidMoreAmount,
 } from './utils';
 
-const expenseCalculator = (body: UserExpense[]) => {
+const expenseCalculator = (body: UserExpenseType[]) => {
   try {
     const usersExpense = body;
 
@@ -29,7 +29,7 @@ const expenseCalculator = (body: UserExpense[]) => {
         (expense) => expense.amount < equalShare
       );
 
-    let result: PayoutsResponse[] = [];
+    let result: SettleUpType[] = [];
 
     for (const userWhoPaidLessThanEqualShare of usersWhoPaidLessThanEqualShare) {
       for (const userWhoPaidMoreThanEqualShare of usersWhoPaidMoreThanEqualShare) {
@@ -67,14 +67,17 @@ const expenseCalculator = (body: UserExpense[]) => {
         result = [
           ...result,
           {
+            owes: userWhoPaidLessThanEqualShare.name,
             owed: userWhoPaidMoreThanEqualShare.name,
-            owns: userWhoPaidLessThanEqualShare.name,
             amount: ownsAmountByUserWhoPaidLessAmount,
           },
         ];
       }
     }
-    return { data: result, message: 'success' };
+    return {
+      data: { total: totalSpentAmount, equalShare, payouts: result },
+      message: 'success',
+    };
   } catch (error) {
     throw new Error(error);
   }

@@ -1,19 +1,24 @@
-export interface UserExpense {
+export interface UserExpenseType {
   amount: number;
   name: string;
 }
 
-export interface PayoutsResponse {
+export interface SettleUpType {
   owed: string;
-  owns: string;
+  owes: string;
   amount: number;
 }
 
-export interface PayoutsResponseType<T> {
-  data: T;
-  message: string
+export interface PayoutsResponseDataType {
+  total: number;
+  equalShare: number;
+  payouts: SettleUpType[];
+}
+export interface PayoutsResponseType {
+  data: PayoutsResponseDataType;
+  message: string;
 }
 
 export interface PayoutsBodyType {
-  expenses: UserExpense[]
+  expenses: UserExpenseType[];
 }

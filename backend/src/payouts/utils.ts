@@ -1,10 +1,10 @@
-import { UserExpense } from './payouts.interface';
+import { UserExpenseType } from './payouts.interface';
 
-export const combineDuplicateExpense = (usersExpense: UserExpense[]) => {
+export const combineDuplicateExpense = (usersExpense: UserExpenseType[]) => {
   let totalSpentAmount = 0;
   // { [name]: [amount] }
   const combineDuplicateExpenseInObject = usersExpense.reduce(
-    (acc: Record<string, number>, userExpense: UserExpense) => {
+    (acc: Record<string, number>, userExpense: UserExpenseType) => {
       totalSpentAmount += userExpense.amount;
       if (acc[userExpense.name]) {
         return {
