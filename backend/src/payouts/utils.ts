@@ -1,4 +1,4 @@
-import { UserExpense } from './calculator.interface';
+import { UserExpense } from './payouts.interface';
 
 export const combineDuplicateExpense = (usersExpense: UserExpense[]) => {
   let totalSpentAmount = 0;

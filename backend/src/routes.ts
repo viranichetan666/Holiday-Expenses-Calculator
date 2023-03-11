@@ -1,8 +1,8 @@
 import express from 'express';
-import calculatorRoute from './calculator/calculator.routes'
+import payoutsRoute from './payouts/payouts.routes'
 
 const router = express.Router()
 
-router.use('/calculator', calculatorRoute)
+router.use('/payouts', payoutsRoute)
 
 export default router 

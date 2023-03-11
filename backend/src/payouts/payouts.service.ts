@@ -1,4 +1,4 @@
-import { CalculatorResponse, UserExpense } from './calculator.interface';
+import { PayoutsResponse, UserExpense } from './payouts.interface';
 import {
   combineDuplicateExpense,
   ownsAmountByUserWhoPaidLessAmountToUserWhoPaidMoreAmount,
@@ -29,7 +29,7 @@ const expenseCalculator = (body: UserExpense[]) => {
         (expense) => expense.amount < equalShare
       );
 
-    let result: CalculatorResponse[] = [];
+    let result: PayoutsResponse[] = [];
 
     for (const userWhoPaidLessThanEqualShare of usersWhoPaidLessThanEqualShare) {
       for (const userWhoPaidMoreThanEqualShare of usersWhoPaidMoreThanEqualShare) {
@@ -80,6 +80,6 @@ const expenseCalculator = (body: UserExpense[]) => {
   }
 };
 
-export const calculatorService = {
+export const payoutsService = {
   expenseCalculator,
 };

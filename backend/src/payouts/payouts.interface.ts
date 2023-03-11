@@ -3,13 +3,17 @@ export interface UserExpense {
   name: string;
 }
 
-export interface CalculatorResponse {
+export interface PayoutsResponse {
   owed: string;
   owns: string;
   amount: number;
 }
 
-export interface ResponseType<T> {
+export interface PayoutsResponseType<T> {
   data: T;
   message: string
+}
+
+export interface PayoutsBodyType {
+  expenses: UserExpense[]
 }
