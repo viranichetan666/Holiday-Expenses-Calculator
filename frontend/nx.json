@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "bunk-test-app",
+  "npmScope": "bunk-app",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -75,5 +75,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "bunk-test-app"
+  "defaultProject": "bunk-app"
 }

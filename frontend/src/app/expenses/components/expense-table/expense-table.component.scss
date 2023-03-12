@@ -1,0 +1,30 @@
+@use "./../../../../assets/scss/colors.scss" as colors;
+@use "./../../../../assets/scss/variables.scss" as variables;
+.expense-table {
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+    tr {
+        &:nth-child(even) {
+            background: colors.$bunk-primary-blue-40;
+        }
+    }
+    th {
+        border: 1px solid colors.$bunk-primary-blue-20;
+        padding: variables.$space-xs;
+        text-align: center;
+        background: colors.$bunk-primary-blue-10;
+        color: colors.$bunk-white;
+    }
+    td {
+        border: 1px solid colors.$bunk-primary-blue-20;
+        padding: variables.$space-xs;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .delete-expense-icon {
+        cursor: pointer;
+    }
+}

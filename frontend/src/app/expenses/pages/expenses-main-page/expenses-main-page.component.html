@@ -1,0 +1,20 @@
+<div class="app-heading">
+    Holiday Expenses Calculator
+</div>
+<div class="wrapper">
+    <h3>Expenses</h3>
+    <bunk-app-expense-table variants="expense" [expenses]="expenses" (deleteExpenseHandler)="deleteExpenseHandler($event)"></bunk-app-expense-table>
+    <h3>Payouts</h3>
+    <div class="payout-summary">
+        <h5>
+            Total: {{total | currency}}
+        </h5>
+        <h5 class="equal-share">
+            Equal Share: {{equalShare | currency}}
+        </h5>
+    </div>
+    <bunk-app-expense-table variants="payout" [payouts]="payouts"></bunk-app-expense-table>
+</div>
+<div>
+    <bunk-app-expense-create (createExpenseHandler)="createExpenseHandler($event)"></bunk-app-expense-create>
+</div>

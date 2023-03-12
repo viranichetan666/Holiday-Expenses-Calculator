@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'bunk-test-app',
+  displayName: 'bunk-app',
   preset: './jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: './coverage/bunk-test-app',
+  coverageDirectory: './coverage/bunk-app',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

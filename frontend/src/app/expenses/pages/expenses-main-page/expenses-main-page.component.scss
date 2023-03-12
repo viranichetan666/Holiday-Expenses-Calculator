@@ -1,0 +1,25 @@
+@use "./../../../../assets/scss/variables.scss" as variables;
+
+.app-heading{
+  font-size: variables.$font-size-title-m;
+  text-align: center;
+  font-weight: 600;
+  margin-top: variables.$space-m;
+}
+.wrapper {
+  width: 90%;
+  font-size: variables.$font-size-body-s;
+  max-width: 90em;
+  margin: variables.$space-s auto;
+  height: calc(100vh - 340px);
+  overflow: auto;
+  h3 {
+    margin: variables.$space-m 0;
+  }
+  .payout-summary {
+    display: flex;
+  }
+  .equal-share {
+    margin-left: variables.$space-xs;
+  }
+}

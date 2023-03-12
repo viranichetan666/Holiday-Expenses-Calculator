@@ -8,12 +8,12 @@
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "e2e/cypress.config.ts",
-        "devServerTarget": "bunk-test-app:serve:development",
+        "devServerTarget": "bunk-app:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "bunk-test-app:serve:production"
+          "devServerTarget": "bunk-app:serve:production"
         }
       }
     },
@@ -26,5 +26,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["bunk-test-app"]
+  "implicitDependencies": ["bunk-app"]
 }

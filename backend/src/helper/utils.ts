@@ -1,4 +1,4 @@
-import { UserExpenseType } from './payouts.interface';
+import { UserExpenseType } from '../api/payouts/payouts.interface';
 
 export const combineDuplicateExpense = (usersExpense: UserExpenseType[]) => {
   let totalSpentAmount = 0;

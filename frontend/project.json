@@ -1,15 +1,15 @@
 {
-  "name": "bunk-test-app",
+  "name": "bunk-app",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "./src",
-  "prefix": "bunk-test-app",
+  "prefix": "bunk-app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/bunk-test-app",
+        "outputPath": "dist/bunk-app",
         "index": "./src/index.html",
         "main": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -50,18 +50,22 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "bunk-test-app:build:production"
+          "browserTarget": "bunk-app:build:production"
         },
         "development": {
-          "browserTarget": "bunk-test-app:build:development"
+          "browserTarget": "bunk-app:build:development",
+          "proxyConfig": "./proxy.conf.json"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "./proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "bunk-test-app:build"
+        "browserTarget": "bunk-app:build"
       }
     },
     "lint": {

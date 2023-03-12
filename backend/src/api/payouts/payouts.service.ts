@@ -2,11 +2,15 @@ import { SettleUpType, UserExpenseType } from './payouts.interface';
 import {
   combineDuplicateExpense,
   ownsAmountByUserWhoPaidLessAmountToUserWhoPaidMoreAmount,
-} from './utils';
+} from '../../helper/utils';
 
 const expenseCalculator = (body: UserExpenseType[]) => {
   try {
     const usersExpense = body;
+
+    if(!body) {
+      throw "Bad Data"
+    }
 
     const {
       combineDuplicateExpenseInArrayOfObject,

@@ -1,0 +1,45 @@
+@use "./../../../../assets/scss/colors.scss" as colors;
+@use "./../../../../assets/scss/variables.scss" as variables;
+
+.sub-container {
+    background-color: colors.$bunk-white;
+    padding: variables.$space-m variables.$space-s;
+    border-radius: 0.3em;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(143,143,143,0.31);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(143,143,143,0.31);
+    box-shadow: 0px 0px 7px 0px rgba(143,143,143,0.31);
+    text-align: center;
+    .app-input {
+        display: block;
+        padding: variables.$space-xs variables.$space-xxs;
+        border: 1px solid colors.$bunk-secondary-grey-20;
+        border-radius: 0.3em;
+        color: colors.$bunk-secondary-grey-10;
+        outline: none;
+        font-weight: 400;
+        margin: variables.$space-xs auto;
+        min-width: 15em;
+        &:focus {
+            border-color: colors.$bunk-primary-blue-10;
+        }
+    }
+    .expense-create-button {
+        font-size: variables.$font-size-body-s;
+        margin-top: variables.$space-xs;
+        background-color: colors.$bunk-primary-blue-10;
+        border: none;
+        outline: none;
+        color: colors.$bunk-white;
+        padding: variables.$space-xs variables.$space-m;
+        border-radius: 0.3em;
+        cursor: pointer;
+        text-align: center;
+        margin-bottom: variables.$space-s;
+        &:disabled{
+            border: 1px solid colors.$bunk-secondary-grey-40;
+            background-color: colors.$bunk-secondary-grey-60;
+            color: #666666;
+            cursor: not-allowed;
+        }
+    }
+}

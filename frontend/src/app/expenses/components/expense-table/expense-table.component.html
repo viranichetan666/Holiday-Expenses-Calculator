@@ -1,0 +1,36 @@
+<table class="expense-table">
+  <tr>
+    <th>Name</th>
+    <th>{{ isPayout ? 'Pay' : 'Expense' }}</th>
+    <th *ngIf="isPayout">To</th>
+    <th *ngIf="isExpense">Action</th>
+  </tr>
+  <ng-container *ngIf="isExpense">
+    <tr *ngIf="!expenses.length">
+        <td colspan="3">No Expenses Found</td>
+    </tr>
+    <tr *ngFor="let expense of expenses">
+      <td>{{ expense.name }}</td>
+      <td>{{ expense.amount | currency }}</td>
+      <td>
+        <img
+          class="delete-expense-icon"
+          width="20"
+          src="assets/delete.png"
+          alt="delete"
+          (click)="deleteExpense(expense)"
+        />
+      </td>
+    </tr>
+  </ng-container>
+  <ng-container *ngIf="isPayout">
+    <tr *ngIf="!payouts.length">
+        <td colspan="3">No Payouts Found</td>
+    </tr>
+    <tr *ngFor="let payout of payouts">
+      <td>{{ payout.owes }}</td>
+      <td>{{ payout.amount | currency }}</td>
+      <td>{{ payout.owed }}</td>
+    </tr>
+  </ng-container>
+</table>

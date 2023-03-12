@@ -23,7 +23,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "bunk-test-app",
+            "prefix": "bunk-app",
             "style": "kebab-case"
           }
         ]

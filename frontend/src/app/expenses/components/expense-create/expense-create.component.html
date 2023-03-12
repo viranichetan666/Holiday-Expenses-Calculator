@@ -1,0 +1,18 @@
+<div class="sub-container">
+    <h3>Add Your Expenses</h3>
+    <form [formGroup]="expenseForm" (ngSubmit)="onCreateExpense()">
+        <input
+            type="text"
+            class="app-input"
+            placeholder="Enter Person Name"
+            formControlName="name"
+        />
+        <input
+            type="number"
+            class="app-input"
+            placeholder="Enter Expense"
+            formControlName="amount"
+        />
+        <button type="submit" [disabled]="!expenseForm.valid" class="expense-create-button">Create Expense</button>
+    </form>
+</div>

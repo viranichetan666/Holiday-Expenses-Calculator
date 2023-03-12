@@ -1,5 +1,5 @@
 import express from 'express';
-import payoutsRoute from './payouts/payouts.routes'
+import payoutsRoute from './api/payouts/payouts.routes'
 
 const router = express.Router()
 

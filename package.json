@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "(cd frontend && npm run test) & (cd backend && npm run test)",
+    "e2e": "(cd frontend && npm run e2e) & (cd backend && npm run e2e)",
+    "install-all": "(cd frontend && npm install) & (cd backend && npm install)",
     "start": "(cd frontend && npm start) & (cd backend && npm start)"
   },
   "repository": {
