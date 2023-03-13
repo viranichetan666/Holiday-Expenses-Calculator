@@ -26,3 +26,7 @@ npm run e2e
 http://localhost:4200 - Frontend
 http://localhost:3000 - Backend
 ```
+
+## Screenshots
+
+![alt text](bunk-holiday-expense-calculator.png)
