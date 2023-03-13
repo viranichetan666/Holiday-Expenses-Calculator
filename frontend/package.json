@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test",
+    "test": "nx test --coverage=true",
     "e2e": "nx e2e e2e"
   },
   "private": true,
@@ -19,7 +19,6 @@
     "@angular/platform-browser-dynamic": "~15.2.0",
     "@angular/router": "~15.2.0",
     "@nrwl/angular": "15.8.5",
-    "jest-mock-extended": "^3.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

@@ -7,7 +7,6 @@ import { ExpensesService } from '../../services/expenses.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { generateUUID } from '../../helpers/expenses';
-import { mock, MockProxy } from 'jest-mock-extended';
 import { of } from 'rxjs';
 
 const expense = {
@@ -67,9 +66,17 @@ describe('ExpensesMainPageComponent', () => {
   });
 
   it.only('should call createExpenseHandler', () => {
+    component.createExpenseHandler(expense)
+    expect(component.expenses).toHaveLength(1)
+  })
+
+  it.only('should call settleUpHandler', () => {
     jest
     .spyOn(mockExpenseService, 'getPayouts')
     .mockReturnValue(of(payoutResponse))
     component.createExpenseHandler(expense)
+    component.settleUpHandler()
+    expect(component.isSettleUp).toBe(true)
+    expect(component.expenses).toHaveLength(1)
   })
 });

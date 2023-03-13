@@ -17,6 +17,7 @@ export class ExpensesMainPageComponent {
   payouts:IPayout[] = [];
   total: number = 0;
   equalShare: number = 0;
+  isSettleUp: boolean = false;
 
   deleteExpenseHandler(expense: IExpense){
     this.expenses = this.expenses.filter(existExpense => existExpense.id !== expense.id)
@@ -30,10 +31,9 @@ export class ExpensesMainPageComponent {
       id: newId
     }
     this.expenses.push(newExpence)
-    this.getPayoutsHandler()
   }
 
-  getPayoutsHandler = () => {
+  getPayoutsHandler(){
     if(this.expenses.length) {
       this.expenseService.getPayouts({
         "expenses": this.expenses
@@ -47,5 +47,10 @@ export class ExpensesMainPageComponent {
       this.total = 0;
       this.equalShare = 0;
     }
+  }
+
+  settleUpHandler() {
+    this.isSettleUp = true;
+    this.getPayoutsHandler()
   }
 }
